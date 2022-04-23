@@ -1,0 +1,27 @@
+buildscript {
+	repositories{
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+repositories {
+	mavenCentral()
+}
+
+sourceCompatibility= 1.8
+targetCompatibility= 1.8
+dependencies {
+	// d877b391766c4adf969143f524e3c16e :: jenkins pass
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-jetty")
+	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
